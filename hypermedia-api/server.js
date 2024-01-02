@@ -22,6 +22,13 @@ app.post('/message', async (req, res)=> {
 
 })
 
+app.post('/echo', async (req, res)=> {
+    const email = req.body.email;
+    const pass = req.body.pass;
+
+    res.send(`<div><b>Email:</b> ${email}, <b>Password:</b> ${pass} </div>`);
+})
+
 const PORT = process.env.PORT || 1330
 
 app.listen (PORT, () => {
