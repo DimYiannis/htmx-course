@@ -15,7 +15,11 @@ app.get('/', (req, res) => {
 });
 
 app.post('/message', async (req, res)=> {
+    // setTimeout(()=> {
+    //     res.send(`<div><h3>Hello World</h3></div>`)
+    // }, 5000);
     res.send(`<div><h3>Hello World</h3></div>`)
+
 })
 
 const PORT = process.env.PORT || 1330
