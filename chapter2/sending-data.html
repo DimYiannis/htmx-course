@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://unpkg.com/htmx.org@1.9.10"
+      integrity="sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXDFfX37iInKRy5xLSi8nO7UC"
+      crossorigin="anonymous"
+    ></script>
+
+    <title>Sending Data</title>
+  </head>
+  <script>
+    function getPassword() {
+      return 'htmxrockshard!'
+    }
+  </script>
+  <body>
+    <!-- <form>
+        <input type="email" name="email" placeholder="Enter Email"/>
+        <br>
+        <input type="password" name="pass" placeholder="Enter Password"/>
+        <button hx-post="http://localhost:1330/echo" 
+        hx-target="#response">
+            Submit
+          </button>
+    </form> -->
+
+    <button hx-post="http://localhost:1330/echo" 
+      hx-target="#response"
+      hx-vals='js:{"email": "x@as.com", "pass" : getPassword()}'>
+      Submit
+    </button>
+
+    <div id="response"></div>
+  </body>
+</html>
