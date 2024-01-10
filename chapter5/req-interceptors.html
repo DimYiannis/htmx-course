@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://unpkg.com/htmx.org@1.9.10"
+      integrity="sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXDFfX37iInKRy5xLSi8nO7UC"
+      crossorigin="anonymous"
+    ></script>
+
+    <title>request interceptors</title>
+    <script>
+        htmx.on("htmx:configRequest", (evt) => {
+            evt.detail.headers["Authorization"] = "Bearer 80160181IPAIAAPPA";
+            evt.detail.parameters["API_KEY"] = "GEWRUYVGEERCIUR3208RU43"
+        })
+
+        htmx.logger = function (elt, event, data) {
+
+            console.log(elt, event, data);
+
+        }
+    </script>
+  </head>
+
+  <body>
+
+    <button
+    hx-post="http://localhost:1330/message"
+    hx-target="#destination">
+    content
+  </button>
+
+  <div id="destination"></div>
+    
+  </body>
+</html>
