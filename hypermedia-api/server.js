@@ -67,6 +67,15 @@ app.post('/oob2', async (req, res)=> {
 
 })
 
+app.get('/bigbox', (req,res) => {
+    res.send(`
+    <div id="growingbox" class="grow" 
+    style="height:300px; width:300px; background-color: blue;">
+        big box
+    </div>
+    `)
+})
+
 const PORT = process.env.PORT || 1330
 
 app.listen (PORT, () => {
