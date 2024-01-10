@@ -53,6 +53,13 @@ app.post('/upload', upload.single("file"), async (req, res)=> {
     res.send(`<div>Upload successful</div>: ${filePath}`);
 })
 
+app.post('/oob', async (req, res)=> {
+   
+    res.send(`<div><h3 id="target2" hx-swap-oob="true">Hello World</h3>
+    to the main target</div>`)
+
+})
+
 const PORT = process.env.PORT || 1330
 
 app.listen (PORT, () => {
