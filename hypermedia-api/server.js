@@ -60,6 +60,13 @@ app.post('/oob', async (req, res)=> {
 
 })
 
+app.post('/oob2', async (req, res)=> {
+   
+    res.send(`<div><h3 id="target2">Hello World</h3>
+    to the main target</div>`)
+
+})
+
 const PORT = process.env.PORT || 1330
 
 app.listen (PORT, () => {
