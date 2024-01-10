@@ -76,6 +76,27 @@ app.get('/bigbox', (req,res) => {
     `)
 })
 
+app.get('/users', (req,res) => {
+    res.json([
+        {
+            id: 1,
+            name: 'Rose'
+        },
+        {
+            id: 2,
+            name: 'lebron'
+        },
+        {
+            id: 3,
+            name: 'kobe'
+        },
+        {
+            id: 4,
+            name: 'curry'
+        },
+    ])
+})
+
 const PORT = process.env.PORT || 1330
 
 app.listen (PORT, () => {
