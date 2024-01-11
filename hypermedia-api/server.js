@@ -100,6 +100,31 @@ app.get('/users', (req,res) => {
     ])
 })
 
+app.post('/script', async (req, res)=> {
+   
+    res.send(`
+    <div>
+        <h3>script loading</h3>
+        <script>
+            console.log("heyyy") 
+        </script>
+    </div>`)
+
+})
+
+app.post('/htmx', async (req, res)=> {
+   
+    res.send(`
+    <div>
+        <h3>Htmx content</h3>
+        <button type-"button"
+            hx-get="http://localhost:1330"
+            hx-target="#destination">Load Root
+        </button>
+    </div>`)
+
+})
+
 const PORT = process.env.PORT || 1330
 
 app.listen (PORT, () => {
