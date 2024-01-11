@@ -35,6 +35,9 @@ app.post('/message', async (req, res)=> {
     // setTimeout(()=> {
     //     res.send(`<div><h3>Hello World</h3></div>`)
     // }, 5000);
+    res.set({
+        "Last-Modified": "Thursday, 11 Jan 2024"
+    })
     res.send(`<div><h3>Hello World</h3></div>`)
 
 })
